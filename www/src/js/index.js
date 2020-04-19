@@ -23,7 +23,9 @@ $(".btn-login").click(function (e) {
         success: function (data) {
             cleanInformation();
             alert("Sucess");
+
             var usuarioLoggen = JSON.parse(data);
+            messageShow(usuarioLoggen);
             user.init(usuarioLoggen[0]);
 
             app.onRouteLocation("home");
