@@ -1,0 +1,259 @@
+.challenges {
+  margin-bottom: 2rem;
+
+  &--row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+
+    &  {
+      .challenges__card {
+        display: flex;
+        flex-direction: column;
+        flex-basis: 30%;
+        padding-bottom: 1.6rem;
+        background-color: #FFF;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .challenges__icon {
+        width: 100%;
+      }
+
+      .challenges__info {
+        justify-content: center;
+        margin: 0.8rem 0rem;
+        padding: 0;
+      }
+
+      .challenges__name {
+        display: none;
+      }
+
+      .challenges__badge-qtd {
+        font-size: 1.2rem;
+        padding: 0.4rem 0.8rem 0.3rem;
+
+        .divider {
+          margin: 0rem 0.6rem;
+        }
+      }
+
+      .challenges__todo {
+        flex: 1;
+        display: flex;
+        align-items: center;
+
+        &.completo .challenges__dots {
+          display: none;
+        }
+        
+        &.completo .challenges__check {
+          display: flex;
+        }
+      }
+
+      .challenges__dots {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0rem 0.4rem;
+
+        span {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-basis: 25%;
+          margin-top: 0.4rem;
+
+          &:before {
+            content: "";
+            display: block;
+            position: relative;
+            border-radius: 50%;
+            width: 0.7rem;
+            height: 0.7rem;
+            border: 1px solid $primary;
+          }
+
+          &.checked:before {
+            background-color: $primary;
+          }
+        }
+      }
+
+      .challenges__check {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        width: 3.5rem;
+        height: 3.5rem;
+        font-size: 1.2rem;
+        color: #FFF;
+        background-color: $primary;
+        border: 0;
+        border-radius: 50%;
+        padding-top: 0.2rem;
+        margin: 0rem auto;
+      }
+    }
+  }
+}
+
+.challenges__card {
+  display: grid;
+  grid-template-columns: 17% auto 30%;
+  align-items: center;
+  padding: 1rem 0.8rem;
+  background-color: #EBEBEB;
+  border-radius: 10px;
+  margin-bottom: 0.8rem;
+}
+
+.challenges__card.ativo {
+  background-color: #FFF;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+.challenges__card.destaque {
+  margin-bottom: 2rem;
+}
+
+.challenges__icon img {
+  width: 100%;
+}
+
+.challenges__info {
+  display: flex;
+  flex-wrap: wrap;
+  font-weight: bold;
+  padding-left: 0.6rem;
+}
+
+.challenges__badge-qtd,
+.challenges__badge-negative-cd {
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  padding: 0.4rem 0.6rem 0.3rem;
+  font-family: Opensans, Helvetica, sans-serif;
+
+  span {
+    font-family: inherit;
+  }
+}
+
+.challenges__badge-qtd {
+  background-color: $primary;
+  color: #FFF;
+  font-family: Opensans, Helvetica, sans-serif;
+
+  span {
+    font-family: inherit;
+  }
+}
+
+.challenges__badge-qtd span {
+  display: inline-block;
+}
+
+.challenges__badge-qtd span.divider {
+  width: 2px;
+  height: 85%;
+  background-color: #FFF;
+  margin: 0rem 0.4rem;
+}
+
+.challenges__badge-negative-cd {
+  background-color: $orange;
+  color: #FFF;
+  margin-left: 0.4rem;
+  letter-spacing: 1px;
+  display: none;
+}
+
+.challenges__card.esgotado .challenges__badge-negative-cd {
+  display: block;
+}
+
+.challenges__badge-negative-cd i {
+  transform-origin: center;
+  animation: rotate360 4s infinite linear;
+  margin-left: 0.4rem;
+}
+.challenges__badge-negative-cd i:before {
+  opacity: 0;
+}
+.challenges__badge-negative-cd i:after {
+  color: #FFF;
+  opacity: 1;
+}
+
+.challenges__name {
+  flex: 1 0 100%;
+  color: $primary;
+  margin-top: .3rem;
+}
+
+.challenges__action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.challenges__check {
+  display: none;
+}
+
+.challenges__card.ativo .challenges__check {
+  display: block;
+  margin-bottom: .5rem;
+}
+
+.challenges__card.ativo .challenges__check {
+  display: block;
+}
+
+.challenges__check-btn {
+  display: block;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.2rem;
+  color: #FFF;
+  background-color: $primary;
+  border: 0;
+  border-radius: 50%;
+  padding-top: .2rem;
+}
+
+.challenges__countdown {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: $primary;
+  font-family: Opensans, Helvetica, sans-serif;
+
+  span {
+    font-family: inherit;
+  }
+}
+.challenges__countdown i {
+  margin-left: .4rem;
+  transform-origin: center;
+  animation: rotate360 4s infinite linear;
+}
+.challenges__countdown i:before {
+  color: transparentize($color: #000000, $amount: 0.8);
+  opacity: .3;
+}
+.challenges__countdown i:after {
+  color: $orange;
+  opacity: 1;
+}
+
+.challenges__card.esgotado .challenges__countdown {
+  display: none;
+}

@@ -1,0 +1,38 @@
+.resultados {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  // grid-template-rows: repeat(2, 1fr);
+  grid-gap: 1rem;
+  margin-bottom: 3rem;
+}
+.resultados__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem 2.5rem;
+  border-radius: 10px;
+  background-color: #FFF;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, .1);
+}
+
+.resultados__title {
+  color: #A0A0A0;
+}
+
+.resultados__number {
+  font-weight: bold;
+  font-size: 2.6rem;
+  color: $orange;
+  margin: 0.6rem 0rem;
+  font-family: Opensans, Helvetica, sans-serif;
+}
+
+.resultados__desc {
+  color: $primary;
+  font-weight: bold;
+}
+#resultLembrete , #resultRanking{
+  display: none;
+}

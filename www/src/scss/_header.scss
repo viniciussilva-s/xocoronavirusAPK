@@ -1,0 +1,221 @@
+nav {
+  position: relative;
+  padding: 1.4rem 2.25rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+.app-logo h1 {
+  margin: 0;
+  color: $primary;
+}
+
+.sidemenu__toggler {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.2rem;
+  color: #FFF;
+  background-color: $primary;
+  border: 0;
+  border-radius: 50%;
+  box-shadow: 0px 0px 16px transparentize($primary, 0.6);
+  transition: transform .4s;
+}
+.sidemenu__toggler.close {
+  position: absolute;
+  top: 1.4rem;
+  left: 0em;
+  font-size: 1.4rem;
+}
+
+.sidemenu.is-open .sidemenu__toggler {
+  transform: translateX(calc(-83vw + 1.7rem));
+}
+
+.sidemenu-menu {
+  position: fixed;
+  width: 80vw;
+  height: 100vh;
+  right: 0;
+  top: 20px;
+  transform: translateX(100%);
+  transition: transform .4s;
+}
+.sidemenu.is-open .sidemenu-menu {
+  transform: translateX(0);
+}
+
+.sidemenu-menu__content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1.5rem;
+  width: 100%;
+  height: 100%;
+  background-color: #FFF;
+  border-top-left-radius: 20px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+.sidemenu-menu__content:before {
+  content: "";
+  background-color: $primary;
+  display: block;
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 20px;
+  z-index: -1;
+}
+
+.sidemenu-menu__perfil {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidemenu-menu__perfil-pic {
+  width: 6rem;
+  height: 6rem;
+  margin-bottom: 1rem;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidemenu-menu__perfil-pic img {
+  width: 100%;
+}
+
+.sidemenu-menu__perfil h2 {
+  color: $primary;
+}
+
+.sidemenu-menu__resumo-perfil {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  background-color: #FFF;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, .1);
+  border-radius: 50rem;
+  padding: 0.8rem 0;
+  margin-top: 1rem;
+  color: $primary;
+}
+
+.sidemenu-menu__meta {
+  padding: 0.2rem 1rem 0.2rem 0rem;
+}
+
+.sidemenu-menu__progress-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.sidemenu-menu__bar {
+  margin-right: 0.4rem;
+  height: 10px;
+  flex: 1;
+  background-color: transparentize($color: $secondary, $amount: 0.8);
+  border-radius: 5rem;
+  overflow: hidden;
+}
+.sidemenu-menu__bar:before {
+  content: "";
+  display: block;
+  width: 80%;
+  height: 100%;
+  background-color: $secondary;
+  border-radius: 5rem;
+}
+
+.sidemenu-menu__pontos {
+  padding: 0.2rem 1rem;
+  border-left: 1px solid transparentize($color: #000000, $amount: 0.9);
+}
+
+.sidemenu-menu__pontos span {
+  display: block;
+}
+
+.sidemenu-menu__route {
+  position: relative;
+  display: block;
+  margin: 2rem;
+  background-color: #FFF;
+  text-decoration: none;
+  color: $primary;
+  font-weight: bold;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, .1);
+  border-radius: 50rem;
+  padding: 1.3rem 2rem 1.1rem 5.5rem;
+}
+
+.sidemenu-menu__route-icon {
+  position: absolute;
+  width: 4.2rem;
+  height: 4.2rem;
+  background: $secondary-gradient;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  left: 0;
+  transform: translate(-5%, -50%);
+}
+
+.sidemenu-menu__footer {
+  width: 100%;
+  height: 8rem;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+
+  .wave {
+    position: absolute;
+    width: 102%;
+    top: -1px;
+    display: flex;
+    justify-content: center;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  & &-img {
+    position: relative;
+    width: 40%;
+    transform: translateY(-30px);
+
+    img {
+      width: 100%;
+    }
+  }
+
+  & &-logo {
+    padding-left: .5rem;
+    width: 55%;
+    
+    img {
+      margin-top: .3rem;
+    }
+  }
+}

@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang='pt-br'>
+
+<head>
+    <title>Title </title>
+    <!-- Required meta tags -->
+    <meta charset='utf-8'>
+    <meta http-equiv='Content-Type' content='text/html;charset=utf-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+
+    <title>Home</title>
+
+    <!-- Fontawesome Pro -->
+    <link rel='stylesheet' href='https://kit-pro.fontawesome.com/releases/v5.11.2/css/pro.min.css'>
+    <!-- <link rel='stylesheet' href='./src/css/header.css'> -->
+    <!-- <link rel='stylesheet' href='./src/css/style.css'> -->
+    <link rel='stylesheet' href='./src/css/all.css'>
+</head>
+
+<body>
+    <div id="userName"></div>
+    <div id="userPic"></div>
+    <div class="login-ilustra">
+        <img class="login__app-logo" src="./src/assets/img/logo_app.svg">
+        <img src="./src/assets/img/ilustra.svg">
+    </div>
+
+    <div class="login">
+        <div class="wave"></div>
+        <div class="login__painel">
+            <div class="login__btns">
+                <a href="cadastro.html" class="login__signup"><span>Criar uma conta</span></a>
+                <!-- <a onclick="getInfo()" class="login__signup"><span>Get INFO</span></a> -->
+                <a href="/login.html" class="login__signin"><span>Entrar</span></a>
+                <a href="#" onclick="login()" class="login__facebook">
+                    <span><i class="fab fa-facebook-f"></i> Entrar com o facebook</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="pos-fixed">
+        <div class="wave"></div>
+
+        Uma iniciativa: <img src="./src/assets/img/logo_mondo.svg">
+    </footer>
+
+    <script src="./src/js/jquery-3.4.1.min.js"></script>
+    <!-- <script src="./src/js/clockJs.js"></script> -->
+    <script src="cordova.js"></script>
+    <script src="./src/js/openfb.js"></script>
+    <!-- <script src='./src/js/index.js'></script> -->
+    <!-- <script src='./src/js/app.js'></script> -->
+    <script>
+
+
+        // Defaults to sessionStorage for storing the Facebook token
+        openFB.init({
+            appId: '208606977072772',
+            tokenStore: window.localStorage
+        });
+        //  Uncomment the line below to store the Facebook token in localStorage instead of sessionStorage
+        //  openFB.init({appId: 'YOUR_FB_APP_ID', tokenStore: window.localStorage});
+
+        function login() {
+            openFB.login(
+                function (response) {
+                    if (response.status === 'connected') {
+                        alert('Facebook login succeeded, got access token: ' + response.authResponse.accessToken);
+                        window.localStorage.tokenAccessFB = response.authResponse.accessToken;
+                        getInfo();
+                    } else {
+                        alert('Facebook login failed: ' + response.error);
+                    }
+                }, { scope: 'email,user_birthday,user_photos,user_age_range,user_location,	user_friends' });
+        }
+        // email
+        // groups_access_member_info
+        // publish_to_groups
+        // user_age_range
+        // user_birthday
+        // user_friends
+        // user_gender
+        // user_hometown
+        // user_likes
+        // user_link
+        // user_location
+        // user_photos
+        const diretorioLocate = "http://localhost/flutter/server/";
+
+
+
+        function getInfo() {
+            openFB.api({
+                path: '/me',
+                success: function (data) {
+                    // console.log(JSON.stringify(data));
+                    window.localStorage.usernameFB = data.name
+                    window.localStorage.id_userFB = data.id;
+                    dnasc(data.id);
+                },
+                error: errorHandler
+            });
+        }
+
+        function dnasc(id) {
+            openFB.api({
+                // path: '/me',
+                path: '/' + id,
+                method: "GET",
+                // params: { "fields": "friends" },
+                params: { "fields": "birthday,email,hometown" },
+                success: function (data) {
+                    // console.log(JSON.stringify(data));
+                    window.localStorage.email = data.email;
+                    window.localStorage.date_nasc = data.birthday;
+                    window.location.href = "cadastro.html";
+
+                },
+                error: errorHandler
+            });
+        }
+        function save_to_token(data) {
+            $.ajax({
+                url: diretorioLocate + "save_token.php",
+                method: "POST",
+                data: { "token": JSON.stringify(data) },
+                success: function (data) {
+                    alert("save");
+                    // $("#emailcreate").addClass("valid").removeClass("formAlert");
+                },
+                error: function (data) {
+                    var rlt = JSON.parse(data.responseText);
+                    messageShow(rlt.message);
+                }
+            });
+        }
+        function share() {
+            openFB.api({
+                method: 'POST',
+                path: '/me/feed',
+                params: {
+                    message: document.getElementById('Message').value || 'Testing Facebook APIs'
+                },
+                success: function () {
+                    alert('the item was posted on Facebook');
+                },
+                error: errorHandler
+            });
+        }
+
+        function readPermissions() {
+            openFB.api({
+                method: 'GET',
+                path: '/me/permissions',
+                success: function (result) {
+                    alert(JSON.stringify(result.data));
+                },
+                error: errorHandler
+            });
+        }
+
+        function revoke() {
+            openFB.revokePermissions(
+                function () {
+                    alert('Permissions revoked');
+                },
+                errorHandler);
+        }
+
+        function logout() {
+            openFB.logout(
+                function () {
+                    alert('Logout successful');
+                },
+                errorHandler);
+        }
+
+        function errorHandler(error) {
+            alert(error.message);
+        }
+
+    </script>
+</body>
+
+</html>

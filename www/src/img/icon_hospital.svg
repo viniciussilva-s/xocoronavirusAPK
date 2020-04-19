@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="103" height="103" viewBox="0 0 103 103">
+  <g id="Grupo_720" data-name="Grupo 720" transform="translate(-34 -824)">
+    <circle id="Elipse_39" data-name="Elipse 39" cx="51.5" cy="51.5" r="51.5" transform="translate(34 824)" fill="#ff784a" opacity="0.253"/>
+    <g id="Grupo_707" data-name="Grupo 707" transform="translate(-583.383 453.673)">
+      <rect id="Retângulo_166" data-name="Retângulo 166" width="78.071" height="52.225" rx="5.279" transform="translate(629.383 399.984)" fill="#93c3fd"/>
+      <g id="Grupo_705" data-name="Grupo 705" transform="translate(650.494 384.327)">
+        <path id="Caminho_3784" data-name="Caminho 3784" d="M663.927,384.327h-4.537a15.657,15.657,0,0,0-15.657,15.657H649.9a10.273,10.273,0,0,1,10.273-10.272h2.974a10.273,10.273,0,0,1,10.273,10.272h6.165A15.656,15.656,0,0,0,663.927,384.327Z" transform="translate(-643.734 -384.327)" fill="#fff"/>
+      </g>
+      <path id="Caminho_3785" data-name="Caminho 3785" d="M673.565,412.221h-8.586v-8.586h-9.56v8.586h-8.586v9.56h8.586v8.586h9.56v-8.586h8.586Z" transform="translate(8.22 9.095)" fill="#f24338"/>
+      <g id="Grupo_706" data-name="Grupo 706" transform="translate(639.939 399.984)">
+        <line id="Linha_31" data-name="Linha 31" y1="52.225" stroke-width="1.154" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <line id="Linha_32" data-name="Linha 32" y2="52.225" transform="translate(6.373)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.154"/>
+        <line id="Linha_33" data-name="Linha 33" y1="52.225" transform="translate(50.587)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.154"/>
+        <line id="Linha_34" data-name="Linha 34" y2="52.225" transform="translate(56.96)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.154"/>
+      </g>
+    </g>
+  </g>
+</svg>

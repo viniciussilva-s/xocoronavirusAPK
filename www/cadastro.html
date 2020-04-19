@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang='pt-br'>
+
+<head>
+  <title>Title </title>
+  <!-- Required meta tags -->
+  <meta charset='utf-8'>
+  <meta http-equiv='Content-Type' content='text/html;charset=utf-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+
+  <title>Home</title>
+
+  <!-- Fontawesome Pro -->
+  <link rel='stylesheet' href='https://kit-pro.fontawesome.com/releases/v5.11.2/css/pro.min.css'>
+  <!-- <link rel='stylesheet' href='./src/css/header.css'> -->
+  <!-- <link rel='stylesheet' href='./src/css/style.css'> -->
+  <link rel='stylesheet' href='./src/css/all.css'>
+</head>
+
+<body>
+
+  <div class="signup">
+    <div class="signup__btn">
+      <a type="button" class="signup__btn-back" href="index.html">
+        <i class="far fa-chevron-left"></i>
+      </a>
+    </div>
+
+    <div class="signup__title">
+      <h1>Bem vindo, <br>ao <span>Higia</span></h1>
+    </div>
+    <div class="information"></div>
+    <form class="stepped-form">
+      <!-- FORM STEP 1 -->
+      <div class="form-step step-1 active">
+        <div class="form__group">
+          <label for="">Nome completo *</label>
+          <input id="name" name="username" type="text" placeholder="Maria Souza" required="true">
+        </div>
+
+        <div class="form__group">
+          <label for="">Data de nascimento</label>
+
+          <div class="input-group">
+            <select id="dia" name="dia">
+              <option selected disabled></option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+              <option value="21">21</option>
+              <option value="22">22</option>
+              <option value="23">23</option>
+              <option value="24">24</option>
+              <option value="25">25</option>
+              <option value="26">26</option>
+              <option value="27">27</option>
+              <option value="28">28</option>
+              <option value="29">29</option>
+              <option value="30">30</option>
+              <option value="31">31</option>
+            </select>
+            <select id="mes" name="mes">
+              <option selected disabled></option>
+              <option value="1">Janeiro</option>
+              <option value="2">Fevereiro</option>
+              <option value="3">Março</option>
+              <option value="4">Abril</option>
+              <option value="5">Maio</option>
+              <option value="6">Junho</option>
+              <option value="7">Julho</option>
+              <option value="8">Agosto</option>
+              <option value="9">Setembro</option>
+              <option value="10">Outubro</option>
+              <option value="11">Novembro</option>
+              <option value="12">Dezembro</option>
+            </select>
+            <select id="ano" name="ano">
+              <option selected disabled></option>
+              <option value="1991">1991</option>
+              <option value="1992">1992</option>
+              <option value="1993">1993</option>
+              <option value="1994">1994</option>
+              <option value="1995">1995</option>
+              <option value="1996">1996</option>
+              <option value="1997">1997</option>
+              <option value="1998">1998</option>
+              <option value="1999">1999</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form__group">
+          <label for="">Estado</label>
+          <select id="uf" name="uf"></select>
+        </div>
+
+        <div class="form__group">
+          <label for="">Cidade</label>
+          <select id="city" name="city"></select>
+        </div>
+
+        <div class="form__submit">
+          <button type="button" class="btn__avancar-casdastro op btn" disabled>Avançar</button>
+        </div>
+      </div>
+
+      <!-- FORM STEP 2 -->
+      <div class="form-step step-2 ">
+        <div class="form__group">
+          <label for="#email">E-mail</label>
+          <input id="email" name="email" type="email" placeholder="lorem@teste.com.br">
+        </div>
+        <div id="inputsface"></div>
+        <div class="form__group ">
+          <label for="#password">Senha</label>
+          <input id="password" name="pass" type="password" placeholder="••••••">
+        </div>
+
+        <div class="form__group ">
+          <label for="#password2">Confirmar senha</label>
+          <input id="password2" name="pass" class="password2" type="password" placeholder="••••••">
+        </div>
+        <div class="form__submit">
+          <button type="button" class="btn__concluir-cadastro  btn">Concluir meu Cadastro</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <footer class="pos-fixed">
+    <div class="wave"></div>
+
+    Uma iniciativa: <img src="./src/assets/img/logo_mondo.svg">
+  </footer>
+
+  <script src="src/js/jquery-3.4.1.min.js"></script>
+  <script src="src/js/state-city.js"></script>
+  <script src="src/js/autocompleteCity.js"></script>
+  <script src='src/js/index.js'></script>
+
+  <script src='src/js/app.js'></script>
+
+  <script>
+    if (window.localStorage.tokenAccessFB != '') {
+
+      $("#email").val(window.localStorage.email);
+      $("#name").val(window.localStorage.usernameFB);
+      if (window.localStorage.date_nasc != '') {
+        var dt_nasc = window.localStorage.date_nasc.split("/");
+        $("#dia").prop("selectedIndex", dt_nasc["1"]);
+        $("#mes").prop("selectedIndex", parseInt(dt_nasc["0"]));
+        document.getElementById("ano").value = dt_nasc['2'];
+      }
+      $("#inputsface").html('');
+
+      $(["tokenAccessFB", "id_userFB"]).each(function (idx, valor) {
+        var newInput = document.createElement("input");
+        newInput.setAttribute('name', valor);
+        newInput.setAttribute('id', valor);
+        newInput.setAttribute('type', 'hidden');
+        document.getElementById("inputsface").appendChild(newInput);
+        document.getElementById(valor).value = window.localStorage[valor];
+      });
+    } 
+  </script>
+</body>
+
+</html>

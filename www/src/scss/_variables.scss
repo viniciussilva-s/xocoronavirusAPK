@@ -1,0 +1,11 @@
+$primary: #007EE7;
+$secondary: #FF2D2D;
+$orange: #FF784A;
+
+$primary-gradient: linear-gradient(lighten($primary, 25%), $primary);
+$secondary-gradient: linear-gradient($orange, $secondary);
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary
+);

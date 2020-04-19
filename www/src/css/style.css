@@ -1,0 +1,250 @@
+@import url(header.css);
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+  font-family: Helvetica, sans-serif;
+  background-color: #f0f0f0;
+  overflow-x: hidden;
+}
+
+body {
+  padding-top: 1rem;
+  width: 100vw;
+  height: 100vh;
+}
+
+button {
+  border: 0;
+  background-color: #f0f0f0;
+}
+button:focus {
+  outline: 0;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  background-color: #FFF;
+  border-radius: 20px 20px 0px 0px;
+  padding: 2rem 2.25rem;
+}
+
+.main-title {
+  margin-bottom: 1rem;
+  color: #023A93;
+}
+
+.challenges {
+  margin-bottom: 2rem;
+}
+
+.challenges__card {
+  display: grid;
+  grid-template-columns: 17% auto 30%;
+  align-items: center;
+  padding: 1rem 0.8rem;
+  background-color: #EBEBEB;
+  border-radius: 10px;
+  margin-bottom: 0.8rem;
+}
+
+.challenges__card.ativo {
+  background-color: #FFF;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+.challenges__card.destaque {
+  margin-bottom: 2rem;
+}
+
+.challenges__icon img {
+  width: 100%;
+}
+
+.challenges__info {
+  display: flex;
+  flex-wrap: wrap;
+  font-weight: bold;
+  padding-left: 0.6rem;
+}
+
+.challenges__badge-qtd,
+.challenges__badge-negative-cd {
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  padding: 0.4rem 0.6rem 0.3rem;
+}
+
+.challenges__badge-qtd {
+  background-color: #D5D967;
+  color: #023A93;
+}
+
+.challenges__badge-qtd span {
+  display: inline-block;
+}
+
+.challenges__badge-qtd span.divider {
+  width: 2px;
+  height: 85%;
+  background-color: #023A93;
+  margin: 0rem 0.4rem;
+}
+
+.challenges__badge-negative-cd {
+  background-color: #FF2C2C;
+  color: #FFF;
+  margin-left: 0.4rem;
+  letter-spacing: 1px;
+  display: none;
+}
+
+.challenges__card.esgotado .challenges__badge-negative-cd {
+  display: block;
+}
+
+.challenges__badge-negative-cd i {
+  transform-origin: center;
+  animation: rotate360 4s infinite linear;
+  margin-left: 0.4rem;
+}
+.challenges__badge-negative-cd i:before {
+  opacity: 0;
+}
+.challenges__badge-negative-cd i:after {
+  color: #FFF;
+  opacity: 1;
+}
+
+.challenges__name {
+  flex: 1 0 100%;
+  color: #4B3CFF;
+  margin-top: .3rem;
+}
+
+.challenges__action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.challenges__check {
+  display: none;
+}
+
+.challenges__card.ativo .challenges__check {
+  display: block;
+  margin-bottom: .5rem;
+}
+
+.challenges__check-btn {
+  display: block;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.2rem;
+  color: #FFF;
+  background-color: #4B3CFF;
+  border: 0;
+  border-radius: 50%;
+  padding-top: .2rem;
+}
+
+.challenges__countdown {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #023A93;
+}
+.challenges__countdown i {
+  margin-left: .4rem;
+  transform-origin: center;
+  animation: rotate360 4s infinite linear;
+}
+.challenges__countdown i:before {
+  color: #023A93;
+  opacity: .3;
+}
+.challenges__countdown i:after {
+  color: #023A93;
+  opacity: 1;
+}
+
+.challenges__card.esgotado .challenges__countdown {
+  display: none;
+}
+
+@keyframes rotate360 {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.resultados {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 1rem;
+}
+.resultados__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem 2.5rem;
+  border-radius: 10px;
+  background-color: #FFF;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, .1);
+}
+
+.resultados__title {
+  color: #A0A0A0;
+}
+
+.resultados__number {
+  font-weight: bold;
+  font-size: 2.6rem;
+  color: #D5D967;
+  margin: 0.6rem 0rem;
+}
+
+.resultados__desc {
+  color: #4B3CFF;
+  font-weight: bold;
+}
+
+.form2{
+  display: none;
+}
+.formAlert{
+  color: #ad6565 ;
+  background-color: #fff;
+  border-color: #c1c1c1;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(241, 0, 0, 0.25);
+}
+
+/* page welcomeUser */
+.header{
+  background: #F0F0F0;
+}
+.ui-autocomplete{
+max-height: 250px !important;
+background: #f0f0f0;
+overflow-y: scroll;
+overflow-x: hidden;
+margin-left: 10px;
+}
+
+.number{
+  font-size: 40px;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang='pt-br'>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <meta name="viewport"
+        content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <title>Hello World</title>
+    <link rel='stylesheet' href='css/styles.css'>
+</head>
+
+<body>
+    <button onclick="app.initialize()">xx</button>
+
+    <div id="map"></div>
+    <!-- script js  -->
+    <script src="cordova.js"></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0aBvu946DphrfRttEB8dAAy5piRGqp3M&callback=test"
+        type="text/javascript"></script>
+
+    <script src='js/index.js'></script>
+
+    <script type="text/javascript">
+        function test() {
+            alert("callback");
+
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: -34.397, lng: 150.644 },
+                zoom: 8
+            });
+            app.initialize();
+        }
+        app.initialize();
+    </script>
+</body>
+
+</html>
