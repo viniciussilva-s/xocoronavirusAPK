@@ -91,17 +91,16 @@ var app = {
   // The scope of 'this' is the event. In order to call the 'receivedEvent'
   // function, we must explicitly call 'app.receivedEvent(...);'
   onDeviceReady: function () {
-    window.plugins.PushbotsPlugin.initialize("5e9cb1b98e4e070a0c32cd7b", { "android": { "sender_id": "278077712979" } });
+    // window.plugins.PushbotsPlugin.initialize("5e9cb1b98e4e070a0c32cd7b", { "android": { "sender_id": "278077712979" } });
 
-
-    // Only with First time registration
-    window.plugins.PushbotsPlugin.on("registered", function (token) {
-      console.log("Registration Id:" + token);
-    });
-    //Get user registrationId/token and userId on PushBots, with evey launch of the app even launching with notification
-    window.plugins.PushbotsPlugin.on("user:ids", function (data) {
-      console.log("user:ids" + JSON.stringify(data));
-    });
+    // // Only with First time registration
+    // window.plugins.PushbotsPlugin.on("registered", function (token) {
+    //   console.log("Registration Id:" + token);
+    // });
+    // //Get user registrationId/token and userId on PushBots, with evey launch of the app even launching with notification
+    // window.plugins.PushbotsPlugin.on("user:ids", function (data) {
+    //   console.log("user:ids" + JSON.stringify(data));
+    // });
     // this.loadingResults();
   },
 
