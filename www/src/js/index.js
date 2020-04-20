@@ -1,5 +1,5 @@
 // const diretorioLocate = "http://localhost/flutter/server/";
-const diretorioLocate = "http://mondopubli.com.br/claro/";
+const diretorioLocate = "http://www.mondopubli.com.br/claro/";
 var messageError = '<div class="alert alert-danger alert-dismissible fade show" role="alert">  <strong>Aviso</strong><br> message<button type="button" class="close closeInformation" data-dismiss="alert" aria-label="Close">    <span aria-hidden="true">&times;</span>  </button> </div>';
 
 $(".closeInformation").click(function () {
@@ -170,16 +170,17 @@ $(".btn__concluir-cadastro").click(function (e) {
         }
     });
     arrayData[":date_nasc"] = data["ano"] + "-" + data["mes"] + "-" + data["dia"];
-    alert(arrayData[":tokenAccessFB"])
+
 
     $.ajax({
         url: diretorioLocate + "insertNewUser.php",
         method: "POST",
         data: arrayData,
         success: function (data) {
+
             user.init(JSON.parse(data));
             app.onRouteLocation("home");
-
+            alert(JSON.parse(data));
             // $("#emailcreate").addClass("is-valid").removeClass("formAlert");
         },
         error: function (data) {
