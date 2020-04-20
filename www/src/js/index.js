@@ -91,6 +91,7 @@ function get_results_challenge() {
         });
     }
 }
+
 $(".btn__avancar-casdastro").click(function (e) {
     e.preventDefault();
     $(".step-2").addClass("active");
@@ -98,62 +99,62 @@ $(".btn__avancar-casdastro").click(function (e) {
 });
 
 
-$("#password,#password2").change(function () {
-    if ($("#password").val() !== $("#password2 ").val()) {
+// $("#password,#password2").change(function () {
+//     if ($("#password").val() !== $("#password2 ").val()) {
 
-        $(this).parent().addClass("formAlert");
-        $("#password").parent().removeClass("is-valid");
-        messageShow("As senhas devem coincidir");
+//         $(this).parent().addClass("formAlert");
+//         $("#password").parent().removeClass("is-valid");
+//         messageShow("As senhas devem coincidir");
 
-    } else if ($("#password").val() == $("#password2 ").val()) {
-        cleanInformation();
-        $("#password,#password2").parent().removeClass("formAlert");
-        $("#password").parent().addClass("is-valid");
-    }
+//     } else if ($("#password").val() == $("#password2 ").val()) {
+//         cleanInformation();
+//         $("#password,#password2").parent().removeClass("formAlert");
+//         $("#password").parent().addClass("is-valid");
+//     }
 
-});
-$("#email").change(function () {
-    $.ajax({
-        url: diretorioLocate + "verifyUserExist.php",
-        method: "POST",
-        data: { "email": $("#email").val() },
-        success: function (data) {
-            cleanInformation();
-            $("#email").parent().addClass("is-valid").removeClass("formAlert");
-        },
-        error: function (data) {
-            $("#email").parent().addClass("formAlert").removeClass("is-valid");
-            var rlt = JSON.parse(data.responseText);
-            messageShow(rlt.message);
-        }
-    });
-})
+// });
+// $("#email").change(function () {
+//     $.ajax({
+//         url: diretorioLocate + "verifyUserExist.php",
+//         method: "POST",
+//         data: { "email": $("#email").val() },
+//         success: function (data) {
+//             cleanInformation();
+//             $("#email").parent().addClass("is-valid").removeClass("formAlert");
+//         },
+//         error: function (data) {
+//             $("#email").parent().addClass("formAlert").removeClass("is-valid");
+//             var rlt = JSON.parse(data.responseText);
+//             messageShow(rlt.message);
+//         }
+//     });
+// })
 
 
-$(".stepped-form").change(function () {
-    if (
-        $("#name").val() != '' &&
-        $("#dia").val() !== null &&
-        $("#mes").val() !== null &&
-        $("#ano").val() !== null &&
-        $("#uf").val() !== null &&
-        $("#city").val() !== null
-    ) {
-        $(".btn__avancar-casdastro").attr("disabled", false).removeClass("op");
-    } else {
-        $(".btn__avancar-casdastro").attr("disabled", true).addClass("op");
-    }
+// $(".stepped-form").change(function () {
+//     if (
+//         $("#name").val() != '' &&
+//         $("#dia").val() !== null &&
+//         $("#mes").val() !== null &&
+//         $("#ano").val() !== null &&
+//         $("#uf").val() !== null &&
+//         $("#city").val() !== null
+//     ) {
+//         $(".btn__avancar-casdastro").attr("disabled", false).removeClass("op");
+//     } else {
+//         $(".btn__avancar-casdastro").attr("disabled", true).addClass("op");
+//     }
 
-    if (
-        $("#email").parent().hasClass("is-valid") &&
-        $("#password").parent().hasClass("is-valid")
-    ) {
-        alert("TRUE");
-        $(".btn__concluir-cadastro").attr("disabled", false).removeClass("op");
-    } else {
-        $(".btn__concluir-cadastro").attr("disabled", true).addClass("op");
-    }
-});
+//     if (
+//         $("#email").parent().hasClass("is-valid") &&
+//         $("#password").parent().hasClass("is-valid")
+//     ) {
+//         alert("TRUE");
+//         $(".btn__concluir-cadastro").attr("disabled", false).removeClass("op");
+//     } else {
+//         $(".btn__concluir-cadastro").attr("disabled", true).addClass("op");
+//     }
+// });
 $(".btn__concluir-cadastro").click(function (e) {
     e.preventDefault();
     var x = $(".stepped-form");
