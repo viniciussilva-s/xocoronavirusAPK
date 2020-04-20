@@ -12,6 +12,7 @@ function messageShow(txt) {
     $(".information").html(messageError.replace("message", txt));
 }
 $(".btn-login").click(function (e) {
+    alert("function login");
     e.preventDefault();
     $.ajax({
         url: diretorioLocate + "login.php",
