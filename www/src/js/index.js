@@ -23,15 +23,14 @@ $(".btn-login").click(function (e) {
         success: function (data) {
             cleanInformation();
             alert("Sucess");
-
             var usuarioLoggen = JSON.parse(data);
-            messageShow(usuarioLoggen);
             user.init(usuarioLoggen[0]);
 
             app.onRouteLocation("home");
         },
         error: function (data) {
             var rlt = JSON.parse(data.responseText);
+            alert(rlt);
             messageShow(rlt.message);
         }
 
