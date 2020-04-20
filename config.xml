@@ -8,7 +8,7 @@ Coronavirus    </description>
         MondoPubli Team
     </author>
     <content src="index.html" />
-    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- <uses-permission android:name="android.permission.INTERNET" /> -->
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="14" />
     <plugin name="cordova-plugin-battery-status" sourc  e="npm" spec="~1.2.4" />
@@ -110,14 +110,14 @@ Coronavirus    </description>
         <allow-intent href="itms-apps:*" />
     </platform>
         <!-- Allow links to example.com -->
-    <allow-navigation href="http://mondopubli.com.br/*" />
+    <!-- <allow-navigation href="http://mondopubli.com.br/*" /> -->
 
     <!-- Wildcards are allowed for the protocol, as a prefix
         to the host, or as a suffix to the path -->
-    <allow-navigation href="*://*.mondopubli.com.br/*" />
+    <!-- <allow-navigation href="*://*.mondopubli.com.br/*" /> -->
 
     <!-- The above is equivalent to these three declarations -->
-    <allow-navigation href="http://*/*" />
+    <!-- <allow-navigation href="http://*/*" />
     <allow-navigation href="https://*/*" />
-    <allow-navigation href="data:*" />
+    <allow-navigation href="data:*" /> -->
 </widget>
