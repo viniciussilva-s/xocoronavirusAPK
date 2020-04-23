@@ -195,7 +195,17 @@ main {
   }
 
   img {
-    margin-top: 2rem;
+    margin-top: 1rem;
+    width: 70%;
+  }
+}
+
+@media (min-height: 700px) {
+  .login-ilustra {
+    img {
+      margin-top: 2rem;
+      width: auto;
+    }
   }
 }
 
@@ -294,6 +304,12 @@ main {
   }
 }
 
+@media (min-height: 700px) {
+  .login {
+    height: 28%;
+  }
+}
+
 .signin form {
   flex: 5;
 }
@@ -305,16 +321,12 @@ main {
 .signin, .signup {
   position: relative;
   width: 100%;
-  height: 88%;
+  height: 95%;
   background-color: #FFF;
   padding: 2rem 2.25rem 2rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-
-  .signin__btn, .signup__btn {
-    flex: 1;
-  }
 
   .signin__title, .signup__title {
     flex: 2;
@@ -324,8 +336,8 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 3rem;
-    height: 3rem;
+    width: 2.5rem;
+    height: 2.5rem;
     font-size: 1.2rem;
     color: #FFF;
     background: $primary-gradient;
@@ -343,6 +355,26 @@ main {
       font-weight: bold;
       color: $primary;
     }
+  }
+}
+
+@media (min-height: 700px) {
+  .signin, .signup {
+    height: 88%;
+    padding-bottom: 1rem;
+  
+    .signin__btn, .signup__btn {
+      flex: 1;
+    }
+
+    .signin__btn-back, .signup__btn-back {
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+
+  form button {
+    margin-top: 0rem;
   }
 }
 
@@ -408,8 +440,9 @@ form {
   }
 
   button {
+    margin-top: 1rem;
     min-width: 50%;
-    padding: 1.2rem 1rem;
+    padding: 1rem;
     background: $primary-gradient;
     color: #FFF;
     font-size: 1rem;
